@@ -3,6 +3,7 @@ require("dotenv").config();
 const app = express();
 const mongoose = require("mongoose");
 const goalRoutes = require("./routes/routes");
+const userRoutes = require("./routes/userRoutes");
 const port = process.env.PORT;
 
 app.use(express.json());
@@ -22,3 +23,5 @@ app.listen(port, () => {
 });
 
 app.use("/api/goals", goalRoutes);
+
+app.use("/api/users", userRoutes);
